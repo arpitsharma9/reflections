@@ -6,19 +6,53 @@ This is required to let git know which files it needs to track. Either those fil
 2. How is the staging area different from the working directory and the repository?
 What value do you think it offers?
 
-Staging areas is different from working directory because the files that we put into the staging area can be committed into the repository. 
-The value it offers is immense. 
+Staging areas is different from working directory because the files that we put into the staging area can only be committed into the repository. 
+The value it offers is immense as you are making regular changes to your code, but you don't want to commit it unless you create a one complete function, fix bugs
+or to have one commit per logical change.
 
 3. How can you use the staging area to make sure you have one commit per logical
 change?
 
+So, when we are working on a product feature, we need to ensure that we perform one commit per logical change. For instance, you are working on a web project in which you need to create a home page, product page, faqs etc..
+So, let's say that when you are ready with the first version of your home page, then you can move that change from working directory to staging area as it is not related to products or faqs page.
+
+Once, it is moved to staging area then you can commit that change to the repository.
+
+
 4. What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
+Let's say that you are maintaining 2 versions of your code base. One is  master code which is in production. Other one is on development in which you are adding new features.
+So, once you are done with the changes in dev and tested it fully, you can merge it with the production version of the code. 
+
 
 5. How do the diagrams help you visualize the branch structure?
+
+Through diagram you can visualize that which changes are done in which branch of the codebase.It will also help us to visualize which changes can be reached by these branches,
+
+You can also see through commit messages that what changes are incorporate in each branch since these branches have been created, 
+
+Git log --graph --online
 
 6. What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+The result of merging two branches is that that new commits in the branches will be merged if there are no conflicts. If there are any conflict , then you have to manually fix that and then commit the changes.
+
+
 7. What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+
+Following are the pros and cons of automatic merging vs. always doing merges
+manually?
+
+Pros:
+- It Saves your time because it is not easy to keep track of every changes.
+- if there are any conflicts then git will not merge those changes and will ask you to manually merge those changes. So, it again saves your time. 
+
+Cons:
+
+- If developers are not in sync over the product feature, they might add features which are conflicting with the project objectives.
+- when you are working on big libraries, you don't want any contributor to automatically merge the changes, as it might change the product behavior.
+
+
+
